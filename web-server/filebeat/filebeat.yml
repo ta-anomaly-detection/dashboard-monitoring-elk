@@ -1,0 +1,21 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /var/app/logs/*.log
+    fields:
+      pipeline_stage: "ingestion"
+      architecture: "web-filebeat-logstash-elasticsearch-kibana"
+    fields_under_root: true
+
+output.logstash:
+  hosts: ["logstash:5044"]
+
+logging:
+  level: info
+  to_files: true
+  files:
+    path: /var/log/filebeat
+    name: filebeat
+    keepfiles: 7
+    permissions: 0644
