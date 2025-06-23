@@ -10,6 +10,8 @@ services:
       - "5601:5601"
     networks:
       - elk-monitor-network
+    volumes:
+      - ./kibana/kibana-dashboard.ndjson:/usr/share/kibana/kibana-dashboard.ndjson
 
 networks:
   elk-monitor-network:

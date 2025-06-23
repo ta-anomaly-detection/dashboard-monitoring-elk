@@ -8,7 +8,7 @@ echo "Start time: $START_TIME"
 hey -n 10000 -c 20 \
   -m POST \
   -T "application/json" \
-  -H "Authorization: bfb8ed93-a1ae-4ee8-b4ec-a50ab54ebfa7" \
+  -H "Authorization: c9bae563-b0df-432c-865e-2d51305b1f63" \
   -d '{"first_name":"John","last_name":"Doe","email":"john@example.com","phone":"08123456789"}' \
   http://localhost:3000/api/contacts
 

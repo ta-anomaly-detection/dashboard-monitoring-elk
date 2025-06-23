@@ -64,6 +64,11 @@ echo "Waiting for Kibana on port 5601..."
 wait_for_port "localhost" "5601"
 echo "Kibana is ready!"
 
+### 5. Import Kibana Dashboard ###
+echo "Importing Kibana dashboard..."
+chmod +x kibana/import-dashboard.sh
+./kibana/import-dashboard.sh
+
 ### FINAL ###
 echo "✅ All services have been deployed and are up!"
 echo ""

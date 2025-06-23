@@ -23,3 +23,11 @@ metricbeat.modules:
     hosts: ["unix:///var/run/docker.sock"]
     period: 10s
     enabled: true
+  - module: logstash
+    metricsets: ["node", "node_stats"]
+    period: 10s
+    hosts: ["http://logstash:9600"]
+  - module: elasticsearch
+    metricsets: ["node", "node_stats", "index"]
+    period: 10s
+    hosts: ["http://elasticsearch:9200"]
